@@ -9,6 +9,7 @@ RUN npm run build
 
 # Run
 FROM arm32v7/node:10
+COPY qemu-arm-static /usr/bin/
 # Don't run as root user
 ENV user kube-slack
 RUN addgroup -S $user && adduser -S -g $user $user
