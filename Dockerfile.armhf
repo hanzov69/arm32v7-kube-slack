@@ -1,5 +1,6 @@
 # Build
 FROM arm32v7/node:10 AS build
+COPY qemu-arm-static /usr/bin/
 WORKDIR /app
 COPY package.json /app
 RUN npm install
