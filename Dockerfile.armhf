@@ -12,7 +12,7 @@ FROM arm32v7/node:10
 COPY qemu-arm-static /usr/bin/
 # Don't run as root user
 ENV user kube-slack
-RUN addgroup --system $user && adduser --system --group $user $user
+RUN addgroup --system $user && adduser --system --ingroup $user $user
 
 WORKDIR /app
 COPY package.json /app
